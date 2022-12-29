@@ -2,7 +2,7 @@
 
 ## Project setup
 ```
-npm install @olvyhq/olvy-feedback-widget-vue@0.1.0
+npm install @olvyhq/widget-vue@0.1.0
 ```
 
 ### Getting Started
@@ -11,7 +11,7 @@ On main.js
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import olvyWidget from '@olvyhq/olvy-feedback-widget-vue'
+import olvyWidget from '@olvyhq/widget-vue'
 const app =createApp(App)
 app.use(olvyWidget)
 app.mount('#app')
