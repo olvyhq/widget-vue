@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "type":"module",
-  "main": "dist/library.js",
-  "module": "dist/library.mjs",
+  "main": "dist/olvy-widget.js",
+  "module": "dist/olvy-widget.mjs",
   "files": [
     "dist/*"
   ],

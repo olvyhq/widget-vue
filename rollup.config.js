@@ -7,11 +7,11 @@ export default [
     output: [
       {
         format: 'esm',
-        file: 'dist/library.mjs'
+        file: 'dist/olvy-widget.mjs'
       },
       {
         format: 'cjs',
-        file: 'dist/library.js'
+        file: 'dist/olvy-widget.js'
       }
     ],
     plugins: [
