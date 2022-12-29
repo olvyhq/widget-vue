@@ -1,73 +1,79 @@
 <template>
-    <div>    
-          <slot></slot>
+    <div>
+        <slot></slot>
     </div>
-  </template>
-  <script lang="js">
-  export default {
-    data :()=>({
-        olvyUtils:{}
+</template>
+<script lang="js">
+export default {
+    data: () => ({
+        olvyUtils: {}
     }),
-    props:{
-        config:{
-            type:Object,
-            default:()=>({})
+    props: {
+        config: {
+            type: Object,
+            default: () => ({})
         }
     },
-    methods:{
-        showWidget(widgetAlias,widgetAliasOrID) {
-            window.OlvyUtils.showWidget(widgetAlias,widgetAliasOrID)
+    methods: {
+        showWidget(widgetAlias, widgetAliasOrID) {
+            window.OlvyUtils.showWidget(widgetAlias, widgetAliasOrID)
         },
-         hideWidget(workspaceAlias,widgetAliasOrID) {
-           window.olvyUtils.hideWidget(workspaceAlias,widgetAliasOrID);
-         },  
-        setUser(workspaceAlias, userObject){
-          window.olvyUtils.setUser(workspaceAlias, userObject);
+        hideWidget(workspaceAlias, widgetAliasOrID) {
+            window.OlvyUtils.hideWidget(workspaceAlias, widgetAliasOrID);
         },
-        setFeedbackMetaInfo (workspaceAlias, metaInfo)  {
-            window.olvyUtils.setFeedbackMetaInfo(workspaceAlias,metaInfo);
-      },
-        refreshUnreadCount(workspaceAlias,widgetAliasOrID){
-          window.olvyUtils.refreshUnreadCount(workspaceAlias,widgetAliasOrID);
+        setUser(workspaceAlias, userObject) {
+            window.OlvyUtils.setUser(workspaceAlias, userObject);
         },
-        getUnreadReleasesCount(workspaceAlias,widgetAliasOrID){
-          window.olvyUtils.getUnreadReleasesCount(workspaceAlias,widgetAliasOrID);
+        setFeedbackMetaInfo(workspaceAlias, metaInfo) {
+            window.OlvyUtils.setFeedbackMetaInfo(workspaceAlias, metaInfo);
         },
-        removeUnreadIndicatorElement(workspaceAlias,widgetAliasOrID){
-          window.olvyUtils.removeUnreadIndicatorElement(
-            workspaceAlias,widgetAliasOrID
-          );
+        refreshUnreadCount(workspaceAlias, widgetAliasOrID) {
+            window.OlvyUtils.refreshUnreadCount(workspaceAlias, widgetAliasOrID);
         },
-        addUnreadIndicatorElement(workspaceAlias,widgetAliasOrID, count){
-          window.olvyUtils.addUnreadIndicatorElement(
-            workspaceAlias,
-            widgetAliasOrID,
-            count
-          );
+        getUnreadReleasesCount(workspaceAlias, widgetAliasOrID) {
+            window.OlvyUtils.getUnreadReleasesCount(workspaceAlias, widgetAliasOrID);
         },
-        getLastOpenedTimestamp(workspaceAlias,widgetAliasOrID){
-            window.olvyUtils.getLastOpenedTimestamp(workspaceAlias,widgetAliasOrID);
+        removeUnreadIndicatorElement(workspaceAlias, widgetAliasOrID) {
+            window.OlvyUtils.removeUnreadIndicatorElement(
+                workspaceAlias, widgetAliasOrID
+            );
         },
-        refresh(workspaceAlias,widgetAliasOrID){
-            window.olvyUtils.refresh(workspaceAlias,widgetAliasOrID);
+        addUnreadIndicatorElement(workspaceAlias, widgetAliasOrID, count) {
+            window.OlvyUtils.addUnreadIndicatorElement(
+                workspaceAlias,
+                widgetAliasOrID,
+                count
+            );
         },
-        teardown(workspaceAlias,widgetAliasOrID){
-            window.olvyUtils.teardown(workspaceAlias,widgetAliasOrID);
+        getLastOpenedTimestamp(workspaceAlias, widgetAliasOrID) {
+            window.OlvyUtils.getLastOpenedTimestamp(workspaceAlias, widgetAliasOrID);
         },
-        createFeedback(workspaceAlias,params){
-          if (window.OlvyConfig || typeof OlvyConfig !== "undefined") {
-            window.olvyUtils.createFeedback(workspaceAlias,params);
-          }
+        refresh(workspaceAlias, widgetAliasOrID) {
+            window.OlvyUtils.refresh(workspaceAlias, widgetAliasOrID);
+        },
+        teardown(workspaceAlias, widgetAliasOrID) {
+            window.OlvyUtils.teardown(workspaceAlias, widgetAliasOrID);
+        },
+        createFeedback(workspaceAlias, params) {
+            window.OlvyUtils.createFeedback(workspaceAlias, params);
         },
     },
-    mounted(){
-        let olvyScript=document.createElement('script')
-        olvyScript.setAttribute('src','http://localhost:3000/scriptV2.js')
-       document.head.appendChild(olvyScript)
-       window.addEventListener('load',()=>{
-       window.OlvyConfig=this.config
-       this.olvyUtils= window.OlvyUtils 
-       })   
+    mounted() {
+        try {
+            if (document) {
+                let olvyScript = document.createElement('script')
+                olvyScript.setAttribute('src', 'http://localhost:3000/scriptV2.js')
+                document.head.appendChild(olvyScript)
+            }
+            if (window && window.OlvyConfig) {
+                window.addEventListener('load', () => {
+                    window.OlvyConfig = this.config
+                    this.olvyUtils = window.OlvyUtils
+                })
+            }
+        } catch (e) {
+            console.log(e)
+        }
     },
-  }
-  </script>
+}
+</script>
