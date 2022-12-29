@@ -65,7 +65,7 @@ export default {
                 olvyScript.setAttribute('src', 'https://app.olvy.co/scriptV2.js')
                 document.head.appendChild(olvyScript)
             }
-            if (window && window.OlvyConfig) {
+            if (window) {
                 window.addEventListener('load', () => {
                     window.OlvyConfig = this.config
                     this.olvyUtils = window.OlvyUtils
