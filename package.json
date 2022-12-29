@@ -2,16 +2,24 @@
   "name": "olvy-feedback-widget-vue",
   "version": "0.1.0",
   "private": true,
+  "type":"module",
+  "main": "dist/library.js",
+  "module": "dist/library.mjs",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-library": "vue-cli-service build --target lib --name olvy-widget ./src/install.js",
+    "build-library": "rollup -c",
     "lint": "vue-cli-service lint"
   },
-  "files":["dist/*"],
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.21"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.21"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -20,7 +28,10 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "rollup": "^3.9.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0"
   },
   "eslintConfig": {
     "root": true,

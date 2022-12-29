@@ -1,24 +1,9 @@
 import OlvyWidget from "./components/OlvyWidget.vue"
-function install(Vue) {
-	if (install.installed) return;
-	install.installed = true;
-	Vue.component("olvy-widget", OlvyWidget);
-}
 
-const plugin = {
-	install,
-};
+const olvyWidget = {
+    install (Vue) {
+      Vue.component("olvy-widget", OlvyWidget)
+    }
+  }
+export default olvyWidget
 
-let GlobalVue = null;
-if (typeof window !== "undefined") {
-	GlobalVue = window.Vue;
-} else if (typeof global !== "undefined") {
-	GlobalVue = global.vue;
-}
-if (GlobalVue) {
-	GlobalVue.use(plugin);
-}
-
-OlvyWidget.install = install;
-
-export default OlvyWidget;
