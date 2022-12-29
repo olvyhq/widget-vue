@@ -62,7 +62,7 @@ export default {
         try {
             if (document) {
                 let olvyScript = document.createElement('script')
-                olvyScript.setAttribute('src', 'http://localhost:3000/scriptV2.js')
+                olvyScript.setAttribute('src', 'https://app.olvy.co/scriptV2.js')
                 document.head.appendChild(olvyScript)
             }
             if (window && window.OlvyConfig) {
