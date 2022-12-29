@@ -21,7 +21,7 @@ app.mount('#app')
 ### How to use in your component
 ```
  <olvy-widget :config="<Configuration>" >
-    <div id="<Target-Element-Id>" test feedback widget</div>
+    <div id="<Target-Element-Id>" </div>
    </olvy-widget>
 
 Replace <Target-Element-Id> with your target element id and <Configuration> with your desired configuration
