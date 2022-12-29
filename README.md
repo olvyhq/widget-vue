@@ -43,3 +43,21 @@ Replace <Target-Element-Id> with your target element id and <Configuration> with
     workspaceAlias:""  //(required)
 }
 ```
+### Methods
+```
+ showWidget(workspaceAlias,widgetAliasOrID) 
+ hideWidget(workspaceAlias,widgetAliasOrID) 
+ setUser(workspaceAlias, userObject) 
+ setFeedbackMetaInfo (workspaceAlias, metaInfo) 
+ refreshUnreadCount(workspaceAlias,widgetAliasOrID)
+ getUnreadReleasesCount(workspaceAlias,widgetAliasOrID)
+ removeUnreadIndicatorElement(workspaceAlias,widgetAliasOrID)
+ addUnreadIndicatorElement(workspaceAlias,widgetAliasOrID, count)
+ getLastOpenedTimestamp(workspaceAlias,widgetAliasOrID)
+ refresh(workspaceAlias,widgetAliasOrID)
+ teardown(workspaceAlias,widgetAliasOrID)
+ createFeedback(workspaceAlias,params)
+
+ workspaceAlias - your subdomain 
+ widgetAliasorID - widget Id or alias ( you can find it on widget details page in olvy dashbaord )
+```
