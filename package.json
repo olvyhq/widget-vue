@@ -1,10 +1,11 @@
 {
-  "name": "olvy-feedback-widget-vue",
+  "name": "@olvyhq/olvy-feedback-widget-vue",
   "version": "0.1.0",
   "private": true,
   "type":"module",
   "main": "dist/olvy-widget.js",
   "module": "dist/olvy-widget.mjs",
+  "repository":"https://github.com/olvyhq/olvy-widget-vue.git",
   "files": [
     "dist/*"
   ],
