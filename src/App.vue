@@ -1,7 +1,12 @@
 <template>
  
-  <OlvyWidget :config="config">
+  <OlvyWidget :config="config" ref="announcement_widget">
     <div id="olvy-whats-new">announcement test</div>
+    </OlvyWidget>
+    <div  @click="openWidget()">
+      test button
+    </div>
+    <OlvyWidget :config="feedback_config">
     <div id="olvy-feedback">feedback test</div>
     </OlvyWidget>
 </template>
@@ -13,11 +18,24 @@ export default {
   components: {
     OlvyWidget
   },
+ 
  data:()=>({
   config:{
   workspaceAlias: "olvysdktest",
+  widgetId:"happy_almeida_vSLzb"
+   },
+   feedback_config:{
+    workspaceAlias: "olvysdktest"
    }
- })
+ }),
+ methods:{
+  openWidget(){
+    this.$refs.announcement_widget.showWidget(this.config.workspaceAlias,this.config.widgetId)
+  }
+ }, 
+ mounted(){
+ // this.$refs["announcement_widget"].showWidget(this.config.widgetId)
+ }
 }
 </script>
 

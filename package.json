@@ -5,8 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-library": "vue-cli-service build --target lib --name olvy-widget ./src/install.js",
     "lint": "vue-cli-service lint"
   },
+  "files":["dist/*"],
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
