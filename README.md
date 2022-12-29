@@ -2,7 +2,7 @@
 
 ## Project setup
 ```
-npm install @olvyhq/widget-vue@0.1.4
+npm install @olvyhq/widget-vue@0.1.5
 ```
 
 ### Getting Started
