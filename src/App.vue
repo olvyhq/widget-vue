@@ -1,16 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ 
+  <OlvyWidget :config="config">
+    <div id="olvy-whats-new">announcement test</div>
+    <div id="olvy-feedback">feedback test</div>
+    </OlvyWidget>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import OlvyWidget from './components/OlvyWidget.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    OlvyWidget
+  },
+ data:()=>({
+  config:{
+  workspaceAlias: "olvysdktest",
+   }
+ })
 }
 </script>
 
