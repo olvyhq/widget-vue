@@ -1,5 +1,5 @@
 {
-  "name": "@olvyhq/olvy-feedback-widget-vue",
+  "name": "@olvyhq/widget-vue",
   "version": "0.1.0",
   "type":"module",
   "main": "dist/olvy-widget.js",
