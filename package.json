@@ -1,9 +1,12 @@
 {
   "name": "@olvyhq/widget-vue",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "main": "dist/olvy-widget.js",
   "module": "dist/olvy-widget.mjs",
-  "repository": "https://github.com/olvyhq/widget-vue.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olvyhq/widget-vue.git"
+  },
   "files": [
     "dist/*"
   ],
@@ -53,5 +56,12 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "description": "This vue component allows you to easily include Olvy widgets in your Vue applications. The component takes care of all the necessary set up and configuration, allowing you to simply specify which Olvy widget you want to use and any relevant options.",
+  "bugs": {
+    "url": "https://github.com/olvyhq/widget-vue/issues"
+  },
+  "homepage": "https://github.com/olvyhq/widget-vue#readme",
+  "author": "Adhil sha",
+  "license": "ISC"
 }
