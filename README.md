@@ -23,17 +23,17 @@ In main.js
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
-import WidgetVue from '@olvyhq/widget-vue'
+import OlvyWidget from '@olvyhq/widget-vue'
 const app =createApp(App)
-app.use(WidgetVue)
+app.use(OlvyWidget)
 app.mount('#app')
 ```
 #### How to use 
 
 ```javascript
-<widget-vue :config="<Configuration>" >
+<olvy-widget :config="<Configuration>" >
     <div id="<Target-Element-Id>"> </div>
-</widget-vue>
+</olvy-widget>
 
 //Replace <Target-Element-Id> with your target element id and <Configuration> with your configuration
 
@@ -42,9 +42,9 @@ app.mount('#app')
 #### Example
 
 ```javascript
-<widget-vue :config="{workspaceAlias: 'olvysdktest'}" >
+<olvy-widget  :config="{workspaceAlias: 'olvysdktest'}" >
     <div id="olvy-whats-new">Announcement Widget</div>
-</widget-vue>
+</olvy-widget>
 ```
 #### Configuration
 ```javascript
