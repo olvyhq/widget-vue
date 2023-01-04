@@ -6,6 +6,9 @@ This vue component allows you to easily include Olvy widgets in your Vue applica
 
 ![Logo](https://olvy-development.s3.amazonaws.com/public_images/olvy-vue.png)
 
+## Demo
+
+https://codesandbox.io/s/eager-hill-g6t0cv
 
 ## Installation
 
@@ -195,7 +198,5 @@ createFeedback(workspaceAlias,params)
 | `workspaceAlias` | `string` | **Required**. Your subdomain |
 | `params` | `object` | **Required**.  |
 
-## Demo
 
-Insert gif or link to demo
 
