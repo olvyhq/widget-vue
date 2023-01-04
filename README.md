@@ -47,7 +47,7 @@ app.mount('#app')
 </widget-vue>
 ```
 #### Configuration
-```json
+```javascript
 {
     widgetId:"",   // (optional)
     workspaceAlias:""  //(required)
