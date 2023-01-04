@@ -6,7 +6,7 @@
 <script lang="js">
 export default {
     data: () => ({
-        olvyUtils: {}
+        olvyUtils: null,
     }),
     props: {
         config: {
