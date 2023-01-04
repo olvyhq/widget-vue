@@ -1,13 +1,13 @@
 <template>
  
   <OlvyWidget :config="config" ref="announcement_widget">
-    <div id="olvy-whats-new">announcement test</div>
+    <div id="olvy-whats-new">Announcement Widget</div>
     </OlvyWidget>
     <div  @click="openWidget()">
       test button
     </div>
     <OlvyWidget :config="feedback_config">
-    <div id="olvy-feedback">feedback test</div>
+    <div id="olvy-feedback">Feedback Widget</div>
     </OlvyWidget>
 </template>
 
