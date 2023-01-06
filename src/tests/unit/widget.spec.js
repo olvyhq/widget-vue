@@ -26,7 +26,5 @@ describe("OlvyWidget.vue", () => {
 
     //To check if announcement widget target element exists
     expect(wrapper.text()).toMatch("Announcement Widget");
-
-    // expect(wrapper.vm.olvyUtils).not.toBe(null)
   });
 });
