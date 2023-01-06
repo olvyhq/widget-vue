@@ -8,7 +8,7 @@ This vue component allows you to easily include Olvy widgets in your Vue applica
 
 ## Demo
 
-https://codesandbox.io/s/eager-hill-g6t0cv
+https://codesandbox.io/s/olvy-widget-vue-g6t0cv
 
 ## Installation
 
@@ -200,3 +200,8 @@ createFeedback(workspaceAlias,params)
 
 
 
+## Tests
+
+```bash
+  npm run test:unit
+```
