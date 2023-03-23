@@ -57,23 +57,23 @@ export default {
         createFeedback(workspaceAlias, params) {
             window.OlvyUtils.createFeedback(workspaceAlias, params);
         },
+        async loadScript(url) {
+  return new Promise((resolve, reject) => {
+    if(!window.OlvyUtils){
+    const script = document.createElement('script');
+    script.src = url;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+    }
+  });
     },
-    mounted() {
-        try {
-            if (document) {
-                let olvyScript = document.createElement('script')
-                olvyScript.setAttribute('src', 'https://app.olvy.co/scriptV2.js')
-                document.head.appendChild(olvyScript)
-            }
-            if (window) {
-                window.addEventListener('load', () => {
-                    window.OlvyConfig = this.config
-                    this.olvyUtils = window.OlvyUtils
-                })
-            }
-        } catch (e) {
-            console.log(e)
-        }
+},
+    async mounted() {
+        await this.loadScript('https://app.olvy.co/scriptV2.js');
+        window.OlvyConfig = this.config
+       this.olvyUtils = window.OlvyUtils
     },
 }
 </script>
