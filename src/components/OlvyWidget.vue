@@ -58,22 +58,22 @@ export default {
             window.OlvyUtils.createFeedback(workspaceAlias, params);
         },
         async loadScript(url) {
-  return new Promise((resolve, reject) => {
-    if(!window.OlvyUtils){
-    const script = document.createElement('script');
-    script.src = url;
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-    }
-  });
+            return new Promise((resolve, reject) => {
+                if (!window.OlvyUtils) {
+                    const script = document.createElement('script');
+                    script.src = url;
+                    script.async = true;
+                    script.onload = resolve;
+                    script.onerror = reject;
+                    document.head.appendChild(script);
+                }
+            });
+        },
     },
-},
     async mounted() {
         await this.loadScript('https://app.olvy.co/scriptV2.js');
         window.OlvyConfig = this.config
-       this.olvyUtils = window.OlvyUtils
+        this.olvyUtils = window.OlvyUtils
     },
 }
 </script>
