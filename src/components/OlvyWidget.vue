@@ -16,17 +16,11 @@ export default {
     },
     methods: {
         getLoadedOlvyScript() {
-            let url = "https://app.olvy.co/scriptV2.js";
-            var scripts = document.getElementsByTagName('script') || [];
-            try{
-                if(scripts && scripts.length) {
-                    for (var i = scripts.length; i--;) {
-                        // if script found, return it
-                        if (scripts[i].src && scripts[i].src === url) return scripts[i];
-                    }
-                }
-            }catch(e) {
-                console.log("scriptcheck error: ",e);
+            let olvyScript = document.getElementById('olvyScriptV2');
+
+            if(olvyScript) {
+                return olvyScript;
+            } else {
                 return null;
             }
         },
@@ -50,6 +44,7 @@ export default {
                     // if script isn't already created by some other olvy-widget, we create one
                     if(!createdOlvyScript) {
                         const script = document.createElement("script");
+                        script.id = "olvyScriptV2";
                         script.src = "https://app.olvy.co/scriptV2.js";
                         script.onload = () => {
                             // The script is loaded, so resolve the Promise
@@ -124,8 +119,12 @@ export default {
         try {
             if(window) {
                 await this.getOlvyUtils();
-                if( (!window.OlvyInstances || !window.OlvyInstances.length) && this.config.workspaceAlias && window.Olvy) {
-                    new window.Olvy(this.config.workspaceAlias);
+                if(this.config.workspaceAlias && window.Olvy) {
+                    let foundOlvyInstance = window.OlvyInstances.find((instance) => instance.workspaceAlias === this.config.workspaceAlias);
+                    // if olvyInstance not found, we create one
+                    if(!foundOlvyInstance) {
+                        new window.Olvy(this.config.workspaceAlias);
+                    }
                 }
             }
         } catch (e) {
