@@ -1,6 +1,6 @@
 {
   "name": "@olvyhq/widget-vue",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "main": "dist/olvy-widget.cjs",
   "module": "dist/olvy-widget.mjs",
   "type":"module",

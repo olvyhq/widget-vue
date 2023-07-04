@@ -1,5 +1,4 @@
 import OlvyWidget from "./components/OlvyWidget.vue"
-import Vue from "vue";
 
 const olvyWidget = {
   install (appInstance) {
@@ -7,9 +6,9 @@ const olvyWidget = {
       console.log(".... nuxt instance.. ", appInstance);
       appInstance.vueApp.use(OlvyWidget, "OlvyWidget");
     } else {
-      console.log("... vue instance..", Vue);
+      console.log("... vue instance..", appInstance);
       // adds component to vue instance
-      Vue.component("olvy-widget", OlvyWidget)
+      appInstance.component("olvy-widget", OlvyWidget)
     }
   }
 }
