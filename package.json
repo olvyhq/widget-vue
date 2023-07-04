@@ -1,7 +1,7 @@
 {
   "name": "@olvyhq/widget-vue",
   "version": "0.1.13",
-  "main": "dist/olvy-widget.js",
+  "main": "dist/olvy-widget.cjs",
   "module": "dist/olvy-widget.mjs",
   "repository": {
     "type": "git",
@@ -68,5 +68,5 @@
   "homepage": "https://github.com/olvyhq/widget-vue#readme",
   "author": "Adhil sha",
   "license": "ISC",
-  "type":"module"
+  "type": "module"
 }

@@ -11,7 +11,7 @@ export default [
       },
       {
         format: 'cjs',
-        file: 'dist/olvy-widget.js'
+        file: 'dist/olvy-widget.cjs'
       }
     ],
     plugins: [
