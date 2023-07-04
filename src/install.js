@@ -6,7 +6,6 @@ const olvyWidget = {
       console.log(".... nuxt instance.. ", appInstance);
       appInstance.vueApp.use(OlvyWidget, "OlvyWidget");
     } else {
-      console.log("... vue instance..", appInstance);
       // adds component to vue instance
       appInstance.component("olvy-widget", OlvyWidget)
     }
