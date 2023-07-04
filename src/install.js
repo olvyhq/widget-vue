@@ -11,7 +11,6 @@ const olvyWidget = {
       // adds component to vue instance
       Vue.component("olvy-widget", OlvyWidget)
     }
-    
   }
 }
 export default olvyWidget
