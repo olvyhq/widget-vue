@@ -1,6 +1,19 @@
 import OlvyWidget from "./components/OlvyWidget.vue"
 
-const olvyWidget = {
+// const olvyWidget = {
+//   install (appInstance) {
+//     if(appInstance.globalName == 'nuxt' && appInstance.vueApp) {
+//       console.log(".... nuxt instance.. ", appInstance);
+//       appInstance.vueApp.use(OlvyWidget, "OlvyWidget");
+//     } else {
+//       // adds component to vue instance
+//       appInstance.component("olvy-widget", OlvyWidget)
+//     }
+//   }
+// }
+// export default olvyWidget
+
+export default {
   install (appInstance) {
     if(appInstance.globalName == 'nuxt' && appInstance.vueApp) {
       console.log(".... nuxt instance.. ", appInstance);
@@ -11,5 +24,6 @@ const olvyWidget = {
     }
   }
 }
-export default olvyWidget
+
+export { default as OlvyWidget } from "./components/OlvyWidget.vue";
 
