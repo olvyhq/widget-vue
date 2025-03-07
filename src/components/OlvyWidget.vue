@@ -123,7 +123,10 @@ export default {
                     let foundOlvyInstance = window.OlvyInstances.find((instance) => instance.workspaceAlias === this.config.workspaceAlias);
                     // if olvyInstance not found, we create one
                     if(!foundOlvyInstance) {
-                        new window.Olvy(this.config.workspaceAlias);
+                        new window.Olvy(this.config.workspaceAlias, {
+                            ...this.config.options,
+                            widgetId: this.config.widgetId,
+                        });
                     }
                 }
             }

@@ -5,6 +5,7 @@ describe("OlvyWidget.vue", () => {
   it("Testing olvy widget with configuration", async () => {
     const config = {
       workspaceAlias: "olvysdktest",
+      widgetId: ""
     };
     const wrapper = await mount(OlvyWidget, {
       props: { config },
@@ -18,7 +19,8 @@ describe("OlvyWidget.vue", () => {
     //To check if workspace alias is received
 
     expect(wrapper.props().config.workspaceAlias).toMatch(
-      config.workspaceAlias
+      config.workspaceAlias,
+      config.widgetId
     );
     //To check if feedback widget target element exists
 

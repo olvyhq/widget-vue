@@ -28,7 +28,8 @@ export default {
       widgetId: "distracted_bhabha_iAzYw"
     },
     feedback_config: {
-      workspaceAlias: "olvysdktest"
+      workspaceAlias: "olvysdktest",
+      widgetId: ""
     }
   }),
   methods: {
